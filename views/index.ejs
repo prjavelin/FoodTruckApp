@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./partials/head'); %>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body class="" id="bodyIndex">
+    <header class="container-fluid p-0">
+        <%- include('./partials/header'); %>  
+    </header>
+    <div class="container" id="restOfDocIndex">
+    <div class="container-fluid text-center">
+
+    <h1 class="p-3">Welcome to the FoodTruck Manager</h1>
+    <h2>POS, Accounting & more...</h2>
+    <div class="">
+    <img class="img-fluid border border-dark rounded" src="intro.webp" alt="">
+</div>
+<div class="p-2">
+    <a class="btn btn-primary btn-lg m-3" href="login"> Login</a>
+    <a class="btn btn-primary btn-lg m-3" href="/signup"> Signup</a>
+        </div>
+    </div>
+</div>
+    <footer class="fixed-bottom">
+        <%- include('./partials/footer'); %>
+    </footer>
+</body>
+</html>

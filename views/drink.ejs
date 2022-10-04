@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('./partials/head'); %>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="container-fluid p-0">
+        <%- include('./partials/headerLoggedIn'); %>  
+    </header>
+    <div  class="container-fluid">
+        <div  class="row">
+            <div id="sideBar" class="col-sm-auto  sticky-top bg-light">
+                <div id="sideBar" class="d-flex flex-sm-column flex-row flex-nowrap  align-items-center sticky-top">
+                    <img class="p-2" id="trucka" src="truck.png" alt="">
+                    <h6 class="pb-5">FoodTruck Manager</h6>
+                    
+                    <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+                        <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center pb-5">
+                        <li class="nav-item flex-sm-column">
+                            <a href="#" class="nav-link  px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                                <img id="logos" class="" src="orders.svg" alt="">
+                                
+                            </a>
+                        </li>
+                        <li class="nav-item flex-sm-column pt-0"><a href=""><span>Orders</span></a> </li>
+                        </ul>
+                        <li class="nav-item">
+                          <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center pb-5">  
+                            
+                            <li><a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                                
+                               <img id="logos" class="" src="clock.svg" alt="">
+                               
+                            </a>
+                        </li>
+                        <li><a href=""> <span>Clock IN/OUT</span></a>
+                        </li>
+                    </ul>
+                
+                    </li>
+                        <li>
+                            <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center pb-5">
+                                <li>
+                            <a href="./menu" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                                <img id="logos" src="menu.svg" alt=""></a>
+                            </li>
+                            <li> <a href="/menu"><span>Food Menu</span></a></li>
+                        </ul>
+                        </li>
+
+                        <li>
+                            <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center pb-5">
+                                <li>
+                            <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                                <img id="logos" src="reports.svg" alt=""></a>
+                            </li>
+                            <li> <a href=""><span>Accounting</span></a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                        
+                       
+                    
+                    
+                </div>
+            </div>
+            <div class="col-sm p-3 min-vh-100">
+                <!-- content -->
+
+                <!-- Categories navbar -->
+                <nav class="navbar navbar-light justify-content-around flex-nowrap pb-5" id="navContent">
+
+                  <a href="/todos" class="dark-link"><button class="btn btn-outline-success btn-lg" type="submit"><h5 class="text-dark">All</h5></button></a>
+
+                  <a href="/mainCourse"><button class="btn btn-outline-success my-2 my-sm-0 btn-lg" type="submit"><h5 class="text-dark">Main Course</h5></button></a>
+
+                  <a href="/appetizer"><button class="btn btn-lg btn-outline-success my-2 my-sm-0" type="submit"><h5 class="text-dark">Appetizers </h5></button></a>
+
+                  <a href="/dessert"><button class="btn btn-lg btn-outline-success my-2 my-sm-0" type="submit"><h5 class="text-dark">Dessert</h5></button></a>
+
+                  <a href="/coffee"><button class="btn btn-lg btn-outline-success my-2 my-sm-0" type="submit"><h5 class="text-dark">Coffee or Tea</h5></button></a>
+
+                  <a href="/drink"><button class="btn btn-lg btn-outline-success my-2 my-sm-0" type="submit"><h5 class="text-dark">Drinks</h5></button></a>
+
+                 
+              
+                  </nav> 
+
+                  <!-- This is where I want my items after I click on the image on top
+                   -->
+                   <ul class="text-decoration-none" id="menuItem">
+                    <% drink.forEach( el => { %>
+                        <li class="text-decoration-none px-3" id='menuItem' data-id='<%=el.userId%>'>
+                            
+                               <h4 class="d-inline-flex p-1 justify-content-between"> <%= el.name %>
+                                <%= el.category %>
+                               <span id="money">$<%= el.price %></span></h4>
+                            
+                           
+                            
+                        </li>
+                    <% }) %>    
+                    </ul>
+
+
+            </div>
+
+            <!-- this is the sidebar that makes the order from the customer -->
+            
+            <div class="col-sm-2 px-0 bg-light pt-4"
+            id="orderTicket">
+            <div class="well">
+                <div class="text-center">
+              <h3>The Foodtruck </h3>
+              <h4>order #</h4>
+              <h4>date & time</h4>
+
+              <h4>YOUR ORDER:</h4>
+            </div>
+
+              <ul>
+                <!-- make the a list inside the li and then 2 items in it, item name and item price -->
+                <li>item with price at the end</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+
+   
+    
+    <!-- <form action="/todos/createTodo" method='POST'>
+        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <input type="submit">
+    </form> -->
+
+    <!-- <a href="/logout">Logout</a> -->
+
+    <footer class="fixed-bottom">
+        <%- include('./partials/footer'); %>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
