@@ -69,7 +69,7 @@
                     
                 </div>
             </div>
-            <div class="col-sm p-3 min-vh-100">
+            <div class="col-sm p-3 min-vh-90">
                 <!-- content -->
 
                 <!-- Categories navbar -->
@@ -100,6 +100,12 @@
                     <h1>Start a New Order</h1>
                 </button>
     </form>
+
+    <form action="/todos/deleteItem/<%= orders.id %>?_method=PUT" method='POST'>
+        <button>
+        <h5>Delete Last Item</h5>
+    </button>
+</form>
 </div>
 <div>
     
@@ -109,10 +115,10 @@
 
 
 
-                   <ul class="text-decoration-none" id="menuItem">
+                   <!-- <ul class="text-decoration-none" id="menuItem"> -->
                     <% allItems.forEach( el => { %>
-                        <li class="text-decoration-none px-3" id='menuItem' data-id='<%=el.name%>'>
-                            <form action="/todos/addItem/<%= orders.id %>?_method=PUT" method="POST" >
+                        <!-- <li class="text-decoration-none px-3" id='menuItem' data-id='<%=el.name%>'> -->
+                            <form action="/todos/addItem/<%= el.name %> $<%= el.price %>?_method=PUT" method="POST" >
                               <button type="submit">
                                <h4 class="d-inline-flex p-1 justify-content-between"> <%= el.name %>
                                 
@@ -121,9 +127,9 @@
                             </form>
                            
                             
-                        </li>
+                        
                     <% }) %>    
-                    </ul>
+                   
 
 
             </div>
@@ -142,13 +148,19 @@
 
             </div>
 
-              <ul>
-                <!-- make the a list inside the li and then 2 items in it, item name and item price -->
-                <li>item with price at the end</li>
-              </ul>
+            <ul>
+
+               <li><%= orders.items %></li> 
+
+                
+                </ul>
             </div>
           </div>
         </div>
+
+         <footer class="fixed-bottom">
+        <%- include('./partials/footer'); %>
+    </footer>
         
     </div>
 
@@ -161,9 +173,7 @@
 
     <!-- <a href="/logout">Logout</a> -->
 
-    <footer class="fixed-bottom">
-        <%- include('./partials/footer'); %>
-    </footer>
+   
 
     <script src="js/main.js"></script>
 </body>

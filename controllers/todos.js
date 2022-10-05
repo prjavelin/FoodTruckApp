@@ -54,32 +54,39 @@ module.exports = {
     },
 
     addItem: async (req, res)=>{
-        console.log("I made it to the addItem function with these params ", req.params, )
+        console.log(req.params.id)
         try{
+            // const mainItems = await Menu.find({userId:req.user.id}             
+            
+            // )
+
             await Order.findOneAndUpdate({
                 paid: false,
-            }, {$push: {items: Menu.name}
+            }, {$push: {items: req.params.id}
         })      
+            res.redirect('/todos')
+        }catch(err){
+            console.log(err)
+        }
+    },
+
+    deleteItem: async (req, res)=>{
+        console.log('made it to controller')
+        try{
+           
+            await Order.findOneAndUpdate({
+                paid: false,
+            }, {$pull: {items: items[items.length-1]}}
+        )      
             res.redirect('/todos')
         }catch(err){
             console.log(err)
         }
     }
 
-    // addItem: async (req, res)=>{
-    //     try{
-    //         await Order.findOneAndUpdate({_id:req.params._id              
-    //         }, {paid: false},
-    //         {$inc: {price: 10}
-    //             //  {$push: {items:['one']}
-    //     })
-           
-    //         res.redirect('/todos')
-          
-    //     }catch(err){
-    //         console.log(err)
-    //     }
-    // }
+    
+
+  
 
 
 
@@ -95,6 +102,8 @@ module.exports = {
     //         console.log(err)
     //     }
     // },
+
+
     // deleteTodo: async (req, res)=>{
     //     console.log(req.body.todoIdFromJSFile)
     //     try{
