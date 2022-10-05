@@ -149,22 +149,35 @@
             </div>
 
             <ul>
+                <ul>
+                    <% orders.items.forEach( el => { %>
+                            <li class='todoItem' data-id='<%=el._id%>'>
+                               <%= el %> 
+                                
+                            </li>
+                    <% }) %>    
+                    </ul>
 
-               <li><%= orders.items %></li> 
+               
 
                 
                 </ul>
+                    <div class="">
+                    <h1>Total: <%= orders.total %> </h1>
+                </div>
+                
             </div>
-          </div>
+            
+          </div> 
         </div>
 
-         <footer class="fixed-bottom">
-        <%- include('./partials/footer'); %>
-    </footer>
+        
         
     </div>
 
-   
+   <footer class="fixed-bottom">
+        <%- include('./partials/footer'); %>
+    </footer>
     
     <!-- <form action="/todos/createTodo" method='POST'>
         <input type="text" placeholder="Enter Todo Item" name='todoItem'>

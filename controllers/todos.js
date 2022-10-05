@@ -61,9 +61,11 @@ module.exports = {
             // )
 
             await Order.findOneAndUpdate({
-                paid: false,
-            }, {$push: {items: req.params.id}
-        })      
+                paid: false
+            }, {$push: {items: req.params.id}}),
+            
+            ({paid: false}, {total: {$sum: 5}}) 
+            
             res.redirect('/todos')
         }catch(err){
             console.log(err)
@@ -76,7 +78,7 @@ module.exports = {
            
             await Order.findOneAndUpdate({
                 paid: false,
-            }, {$pull: {items: items[items.length-1]}}
+            }, {$pull: {items: 'mofongo12.35'}}
         )      
             res.redirect('/todos')
         }catch(err){

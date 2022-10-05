@@ -12,6 +12,6 @@ router.post('/createOrder', todosController.createOrder);
 
 router.put('/addItem/:id', todosController.addItem);
 
-router.delete('/deleteItem/:id', todosController.deleteItem)
+router.put('/deleteItem/:id', todosController.deleteItem)
 
 module.exports = router;
