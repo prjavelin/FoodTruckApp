@@ -10,7 +10,7 @@ router.get('/', ensureAuth, acctController.getTax);
 
 // router.post('/createOrder', todosController.createOrder);
 
-// router.put('/addItem/:id', todosController.addItem);
+router.put('/changeLocal/:id', acctController.changeLocal);
 
 // router.put('/sumItem/:id', todosController.sumItem);
 

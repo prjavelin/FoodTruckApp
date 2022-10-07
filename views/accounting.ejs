@@ -72,93 +72,35 @@
             <div class="col-sm p-3 min-vh-100">
                 <!-- content -->
 
-                <!-- Categories navbar -->
-                <nav class="navbar navbar-light justify-content-around flex-nowrap" id="navContent">
-                  <!-- looking where the form goes to get from the database -->
-                    <div class="card-deck p-0">
+                <div><h3>Your Tax: </h3></div>
 
-                        <div class="card align-items-center p-0">
-                          <img class="card-img-top image-fluid p-0" 
-                          id="logoCat" src="main.svg" alt="Card image cap">
-                          <div class="card-body p-0">
-                            <img src="" alt="">
-                            <h5 class="card-title">Main Course</h5>
-                            
-                            
-                          </div>
-                        </div>
-                        <div class="card align-items-center p-0">
-                          <img class="card-img-top" src="app.svg" id="logoCat" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Appetizers</h5>
-                           
-                            
-                          </div>
-                        </div>
-                        <div class="card align-items-center">
-                          <img class="card-img-top" src="dessert.svg" id="logoCat" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Desserts</h5>
-                           
-                           
-                          </div>
-                        </div>
+                <h4>Change your Tax rate here:</h4>
+                <div class="justify-content-center align-items-center">
 
-                        <div class="card align-items-center">
-                            <img class="card-img-top" src="coffee.svg" id="logoCat" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title">Coffee or Tea</h5>
-                             
-                           
-                            </div>
-                          </div>
+                  <!-- <form class="p-3" action="/accounting/changeLocal/:id?_method=PUT" method='POST'>
+                    <div class="col-md-3 mb-3">
+                      <label for="validationDefault04">Local Tax</label>
+                      <input type="number" step="any" placeholder="Local Tax" name="localTax">
+                      <input type="submit">
+                    </div>
+                  </form> -->
+              </div>
 
-                          <div class="card align-items-center">
-                            <img class="card-img-top pt-1" src="drinks.svg" id="logoCat" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title">Drinks</h5>
-                           
-                             
-                            </div>
-                          </div>
-                      </div>
+
               
-                  </nav> 
+
+              
 
 
             </div>
 
-            <!-- this is the sidebar that makes the order from the customer -->
-            
-            <!-- <div class="col-sm-2 px-0 bg-light pt-4"
-            id="orderTicket">
-            <div class="well">
-                <div class="text-center">
-              <h3>The Foodtruck </h3>
-              <h4>order #</h4>
-              <h4>date & time</h4>
-
-              <h4>YOUR ORDER:</h4>
-            </div>
-
-              <ul>
-                 make the a list inside the li and then 2 items in it, item name and item price -->
-                <!-- <li>item with price at the end</li>
-              </ul>
-            </div>
-          </div> --> 
         </div>
         
     </div>
 
    
     
-    <!-- <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
-    </form> -->
-
-    <!-- <a href="/logout">Logout</a> -->
+ 
 
     <footer class="fixed-bottom">
         <%- include('./partials/footer'); %>

@@ -30,6 +30,7 @@ require('./config/passport')(passport)
 
 connectDB()
 
+app.set('views', './views')
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
@@ -66,7 +67,7 @@ app.use('/appetizer', appetizerRoutes)
 app.use('/dessert', dessertRoutes)
 app.use('/coffee', coffeeRoutes)
 app.use('/drink', drinkRoutes)
-app.use('/acccounting', accountingRoutes)
+app.use('/accounting', accountingRoutes)
 
  
 app.listen(process.env.PORT, ()=>{
