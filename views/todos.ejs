@@ -106,7 +106,7 @@
         <h5>Delete Last Item</h5>
     </button>
 </form>
-<h2><%= orders.items.filter((e,i)=> i===orders.items.length-1) %> </h2>
+
 
 </div>
 <div>
@@ -146,7 +146,7 @@
                 <div class="text-center">
               <h3>The Foodtruck </h3>
               <h6>order # <%= orders._id %></h6>
-              <h4> <%= orders.createdAt %> </h4>
+              <h4> <%= orders.createdAt.toString().slice(4,15) %> </h4>
 
               <h4>YOUR ORDER:</h4>
 
@@ -167,7 +167,10 @@
                 
                 </ul>
                     <div class="">
-                    <h4>Subtotal: <%= orders.items.map(e=> e.slice(e.indexOf('$')+1, e.length)).map(Number).reduce((a,b)=>a+b) %> </h4>
+                    <h4>Subtotal: $<%= orders.items.map(e=> e.slice(e.indexOf('$')+1, e.length)).map(Number).reduce((a,b)=>a+b).toFixed(2) %> </h4>
+                    <h4>Local Tax: $<%=(orders.items.map(e=> e.slice(e.indexOf('$')+1, e.length)).map(Number).reduce((a,b)=>a+b).toFixed(2))*orders.localTax %> </h4>
+                    <h4>State Tax: $<%=(orders.items.map(e=> e.slice(e.indexOf('$')+1, e.length)).map(Number).reduce((a,b)=>a+b).toFixed(2))*orders.stateTax %> </h4>
+                    <h1>Total: $</h1>
 
                 </div>
                 
