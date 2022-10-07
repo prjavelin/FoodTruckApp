@@ -72,6 +72,20 @@ module.exports = {
         }
     },
 
+    sumItem: async (req, res)=>{
+        console.log(req.params.id)
+        try{
+            await Order.findOneAndUpdate({
+                paid: false
+            }, {$sum: {total: req.params.id}})
+                       
+            
+            res.redirect('/todos')
+        }catch(err){
+            console.log(err)
+        }
+    },
+
     deleteItem: async (req, res)=>{
         console.log('made it to controller')
         try{

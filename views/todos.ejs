@@ -119,11 +119,13 @@
                     <% allItems.forEach( el => { %>
                         <!-- <li class="text-decoration-none px-3" id='menuItem' data-id='<%=el.name%>'> -->
                             <form action="/todos/addItem/<%= el.name %> $<%= el.price %>?_method=PUT" method="POST" >
+                                <form action="/todos/sumItem/<%=el.price %>?_method=PUT" method="POST" ></form>
                               <button type="submit">
                                <h4 class="d-inline-flex p-1 justify-content-between"> <%= el.name %>
                                 
                                <span id="money">$<%= el.price %></span></h4>
                           </button>
+                          </form>
                             </form>
                            
                             
