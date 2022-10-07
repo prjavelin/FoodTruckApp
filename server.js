@@ -21,7 +21,7 @@ const appetizerRoutes = require('./routes/appetizer')
 const dessertRoutes = require('./routes/dessert')
 const coffeeRoutes = require('./routes/coffee')
 const drinkRoutes = require('./routes/drink')
-// const accountingRoutes = require('./accounting')
+const accountingRoutes = require('./routes/accounting')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -66,7 +66,7 @@ app.use('/appetizer', appetizerRoutes)
 app.use('/dessert', dessertRoutes)
 app.use('/coffee', coffeeRoutes)
 app.use('/drink', drinkRoutes)
-// app.use('/acccounting', accountingRoutes)
+app.use('/acccounting', accountingRoutes)
 
  
 app.listen(process.env.PORT, ()=>{
