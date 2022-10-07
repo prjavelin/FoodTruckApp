@@ -73,7 +73,7 @@ module.exports = {
     },
 
     sumItem: async (req, res)=>{
-        console.log(req.params.id)
+        console.log('trato de correr la suma')
         try{
             await Order.findOneAndUpdate({
                 paid: false
@@ -92,7 +92,7 @@ module.exports = {
            
             await Order.findOneAndUpdate({
                 paid: false,
-            }, {$pull: {items: 'mofongo12.35'}}
+            }, {$pull: {items: '[pollo frito ,6.78]'}}
         )      
             res.redirect('/todos')
         }catch(err){
