@@ -62,24 +62,8 @@ module.exports = {
 
             await Order.findOneAndUpdate({
                 paid: false
-            }, {$push: {items: req.params.id}}),
-            
-            ({paid: false}, {total: {$sum: 5}}) 
-            
-            res.redirect('/todos')
-        }catch(err){
-            console.log(err)
-        }
-    },
-
-    sumItem: async (req, res)=>{
-        console.log('trato de correr la suma')
-        try{
-            await Order.findOneAndUpdate({
-                paid: false
-            }, {$sum: {total: req.params.id}})
-                       
-            
+            }, {$push: {items: req.params.id}})
+                        
             res.redirect('/todos')
         }catch(err){
             console.log(err)
@@ -92,7 +76,7 @@ module.exports = {
            
             await Order.findOneAndUpdate({
                 paid: false,
-            }, {$pull: {items: '[pollo frito ,6.78]'}}
+            }, {$pop: {items: 1}}
         )      
             res.redirect('/todos')
         }catch(err){
