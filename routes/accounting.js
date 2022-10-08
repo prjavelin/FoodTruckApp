@@ -12,6 +12,8 @@ router.get('/', ensureAuth, acctController.getTax);
 
 router.put('/changeLocal/:id', acctController.changeLocal);
 
+router.put('/changeState/:id', acctController.changeState);
+
 // router.put('/sumItem/:id', todosController.sumItem);
 
 // router.put('/deleteItem/:id', todosController.deleteItem)
