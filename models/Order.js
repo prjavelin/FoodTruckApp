@@ -29,6 +29,18 @@ stateTax:{
     default: 0
 },
 
+subTotal :{
+    type: Number, 
+    required: true,
+    default: 0
+},
+
+total:{
+  type: Array,
+  required: true,
+  default: []
+
+},
   items:{
     type: Array,
     required:true,

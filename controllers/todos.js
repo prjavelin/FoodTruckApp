@@ -1,6 +1,7 @@
 const Todo = require('../models/Todo')
 const Menu = require('../models/Menu')
 const Order = require('../models/Order')
+const User = require('../models/User')
 
 module.exports = {
     getTodos: async (req,res)=>{
@@ -32,8 +33,11 @@ module.exports = {
                 const mainItems = await Menu.find({userId:req.user.id              
                 })
                 const openOrders = await Order.findOne({paid: false})
+                const taxRates = await User.find({userId:req.user.id})
                 // const  openOrders= await Order.find({paid: false})
-                res.render('todos.ejs', {allItems: mainItems, orders: openOrders})
+                // const users = await User.find({userId:req.user.id, localTax: req.user.id, stateTax: req.user.id              
+                // })
+                res.render('todos.ejs', {allItems: mainItems, orders: openOrders, tax: req.user})
                 console.log(openOrders)
                 
             }catch(err){
